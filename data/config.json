@@ -1,1 +1,9 @@
-config.local.json
+{
+	"title" : "Radioactivists - Trailer",
+	"video" : "http://vimeo.com/27484408",
+	"subtitles" : { 
+					"jp" : "data/jp.srt",
+					"de" : "data/de.srt",
+					"en" : "data/en.srt"
+				  }
+}
