@@ -1,0 +1,9 @@
+{
+	"title" : "Radioactivists - Trailer",
+	"video" : "http://www.youtube.com/watch?v=cRpsXpUGDQY",
+	"subtitles" : { 
+					"jp" : "data/jp.annotations.srt",
+					"de" : "data/de.srt",
+					"en" : "data/en.srt"
+				  }
+}

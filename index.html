@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Title</title>
+  
+  <!-- jquery ui -->
+  <link rel="stylesheet" href="libs/jquery-ui/jquery-ui-1.10.0.custom.min.css">
+  <!--
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+  -->
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <link rel="stylesheet" href="libs/foundation/stylesheets/foundation.css">
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="libs/foundation/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="libs/foundation/stylesheets/app.css">
+
+  <style type="text/css">  
+	object {
+		width: 100%;
+	}
+
+  	video {
+    	width: 100%;
+	}
+
+	#subtitle-jp, #subtitle-de {
+		margin: 1em 0;
+	}
+	
+	.ln {
+		font-size: 1.1em;
+	}
+	
+	#simpleContained1Tab, 
+	#simpleContained2Tab, 
+	#simpleContained3Tab {
+		height: 35em;
+	}
+	
+	#terms, #transcript {
+		height: 100%;
+		overflow: auto;
+	}
+
+	#transcript {
+		line-height: 1.5;
+	}
+	
+	#transcript a, 
+	#transcript a:visited, 
+	#transcript a:active, 
+	#transcript a:focus {
+		text-decoration: none;
+		color: #000000;
+	}
+
+	#transcript a:hover {
+		color: #2BA6CB;
+	}
+
+  </style>
+  
+  <!-- terms/definitions: -->
+  <link rel="stylesheet" href="edusubs/edusubs-jp.css">  
+  <link rel="stylesheet" href="edusubs/dictionaries.css">
+  
+
+  <script src="libs/foundation/javascripts/modernizr.foundation.js"></script>
+</head>
+<body>
+
+  <p></p>
+
+  <div class="row">
+    <div class="twelve columns">
+    	<div class="panel">
+      		<h2 id="title">Title</h2>
+    	</div>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="five columns" id="video-column">
+  		<div class="panel">
+  			<div id="controls">
+  			<ul class="button-group radius even three-up">
+  				<li><a id="button-jp" href="jp" class="button radius secondary">JP</a></li>
+  				<li><a id="button-de" href="de" class="button radius secondary">DE</a></li>
+  				<li><a id="button_bi" href="bi" class="button radius">beides</a></li>
+			</ul>
+  			</div>
+  			<div id="video-container"></div>
+  			<div id="subtitles">
+  				<div id="subtitle-jp"></div>
+  				<div id="subtitle-de"></div>
+  			</div>
+  		</div>
+  	</div>
+  	
+  	<div class="seven columns">
+		<dl class="tabs contained">
+  			<dd class="active"><a href="#simpleContained1">Text</a></dd>
+  			<dd><a href="#simpleContained2">Vokabeln</a></dd>
+  			<dd><a href="#simpleContained3">Lexika</a></dd>
+		</dl>
+		<ul class="tabs-content contained">
+			<li class="active" id="simpleContained1Tab">
+				<div id="transcript"></div>
+			</li>
+			<li id="simpleContained2Tab">
+				<div id="terms"></div>
+			</li>
+			<li id="simpleContained3Tab">
+				<ul class="button-group radius even three-up">
+					<li><a id="button-kanjiabc" href="kanjiabc" class="small button radius">Kanji ABC</a></li>
+					<li><a id="button-wadoku" href="wadoku_de" class="small button radius secondary">WaDoku</a></li>
+					<li><a id="button-wadokukeizai" href="wadokukeizai" class="small button radius secondary">Wadokukeizai</a></li>
+				</ul>
+				<div id="dictionaries"></div>
+			</li>
+		</ul>
+	</div>
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <script src="libs/foundation/javascripts/jquery.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.forms.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.reveal.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.orbit.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.navigation.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.buttons.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.tabs.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.tooltips.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.accordion.js"></script>
+  <script src="libs/foundation/javascripts/jquery.placeholder.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.alerts.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.topbar.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.joyride.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.clearing.js"></script>
+  <script src="libs/foundation/javascripts/jquery.foundation.magellan.js"></script>
+  
+  <!--
+  <script src="libs/popcorn/popcorn-complete.1_3.js"></script>
+  <script src="libs/popcorn/popcorn-complete.1_1_2.js"></script>
+  -->
+  <script src="libs/popcorn/popcorn-complete.86fa4a4.js"></script>
+
+  <!-- springende divs
+  <script src="libs/popcorn/popcorn.supertext.js"></script>
+  -->
+
+  <script src="edusubs/dictionaries.js"></script>
+  <script src="edusubs/popcorn-edusubs.js"></script>  
+  <script src="edusubs/edusubs-jp.js"></script>
+  <script src="edusubs/edusubs.js"></script>
+
+  <script src="libs/jquery-ui/jquery-ui-1.10.0.custom.min.js"></script>
+  <!-- 
+  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>  
+  -->
+
+    <script>
+    </script> 
+  
+</body>
+</html>

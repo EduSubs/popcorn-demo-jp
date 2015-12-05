@@ -1,0 +1,13 @@
+{
+	"title" : "Radioactivists - Trailer",
+	"video" : [ 
+				"data/Radioactivists_Official_Trailer.ogv",
+				"data/Radioactivists_Official_Trailer.mp4"
+			  ],
+	"subtitles" : { 
+					"jp" : "data/jp.annotations.srt",
+					"jp" : "data/jp.srt",
+					"de" : "data/de.srt",
+					"en" : "data/en.srt"
+				  }
+}
