@@ -4,8 +4,8 @@
 				"http://www.marco83.com/edusubs/data/MLK.mp4"
 			  ],
 	"subtitles" : { 
-					"jp" : "data/ar.srt",
-					"de" : "data/de.srt",
+					"jp" : "data/en.srt",
+					"de" : "data/ar.srt",
 					"en" : "data/en.srt"
 				  }
 }
