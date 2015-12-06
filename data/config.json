@@ -1,8 +1,10 @@
 {
-	"title" : "Radioactivists - Trailer",
-	"video" : "http://vimeo.com/27484408",
+	"title" : "Martin Luther King - Proud to be maladjusted",
+	"video" : [ 
+				"http://www.marco83.com/edusubs/data/MLK.mp4"
+			  ],
 	"subtitles" : { 
-					"jp" : "data/jp.annotations.srt",
+					"jp" : "data/ar.srt",
 					"de" : "data/de.srt",
 					"en" : "data/en.srt"
 				  }

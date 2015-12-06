@@ -1,2 +1,4 @@
 data/Radioactivists_Official_Trailer.ogv
 data/Radioactivists_Official_Trailer.mp4
+*.mp4
+.DS_Store
