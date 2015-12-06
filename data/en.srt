@@ -1,6 +1,6 @@
 ﻿1
 00:00:00,000 --> 00:00:04,104
-Modern [def]PSY > psychology[/def] has a word that is probably used more
+Modern [defn]PSY > psychology[/defn] has a word that is probably used more
 
 2
 00:00:04,104 --> 00:00:06,573
@@ -36,7 +36,7 @@ I would like to say to you today in very honest manner,
 
 10
 00:00:31,832 --> 00:00:37,070
-there´re some things in our [def]SOC > society[/def] and some things in our world
+there´re some things in our [defn]SOC > society[/defn] and some things in our world
 
 11
 00:00:37,404 --> 00:00:41,108
@@ -60,7 +60,7 @@ I must honestly say to you that I never intend to adjust myself
 
 16
 00:00:53,353 --> 00:00:57,791
-to racial segregation and [def]DISC > discrimination[/def].
+to racial segregation and [defn]DISC > discrimination[/defn].
 
 17
 00:00:57,991 --> 00:01:03,597
