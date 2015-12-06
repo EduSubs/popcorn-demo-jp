@@ -6,6 +6,112 @@
 <head>
   <meta charset="utf-8" />
 
+<!-- annotator -->
+ <link rel="stylesheet" href="lib/annotator-full.1.2.9/annotator.min.css">
+              <link rel="stylesheet" href="src/css/style.css">
+              <link rel="stylesheet" href="lib/css/annotator.touch.css">
+          <script src="lib/jquery-1.9.1.js"></script>
+          <script src="lib/annotator-full.1.2.9/annotator-full.min.js"></script>
+              <script src="lib/jquery-i18n-master/jquery.i18n.min.js"></script>
+              <script src="lib/jquery.dateFormat.js"></script>
+               <script src="lib/jquery.slimscroll.js"></script>
+            <script src="locale/en/annotator.js"></script>
+              
+               <script src="lib/annotator.touch.js"></script>
+              <script src="src/view_annotator.js"></script>
+              <script src="src/categories.js"></script>
+               <script>
+                   jQuery(function ($) {
+                      $.i18n.load(i18n_dict);
+                   // Customise the default plugin options with the third argument.
+                    var annotator = $('body').annotator().annotator().data('annotator');
+                    var propietary = 'demoUser';
+                    annotator.addPlugin('Permissions', {
+                        user: propietary,
+                        permissions: {
+                            'read': [propietary],
+                            'update': [propietary],
+                            'delete': [propietary],
+                            'admin': [propietary]
+                        },
+                        showViewPermissionsCheckbox: true,
+                        showEditPermissionsCheckbox: false
+                    });
+                  $('body').annotator().annotator('addPlugin', 'AnnotatorViewer');
+                  $('body').annotator().annotator("addPlugin", "Touch");
+                  // $('body').annotator().annotator('addPlugin', 'Categories',{
+                  //          errata:'annotator-hl-errata',
+                  //          destacat:'annotator-hl-destacat',
+                  //          subratllat:'annotator-hl-subratllat' }
+                  //    );
+                  Annotator.Plugin.Message = function (element, message) {
+                  var plugin = {};
+
+                  plugin.pluginInit = function () {
+                    //console.log(this.annotator);
+                    obj = this.annotator;
+                    //Original Spelling:
+                    this.annotator.viewer.addField({
+                        load: function (field, annotation) {
+                          field.innerHTML = $('#pronounciation').attr("placeholder")+": "+$('#pronounciation').val()
+                        }
+                    });
+
+                  this.annotator.editor.addField({
+                      id: "pronounciation",
+                      name: "pronounciation",
+                        label: 'Pronounciation',
+                        type: 'input',
+                        load: function (field, annotation) {
+                          //console.log(obj);
+                            //console.log(field);
+                            //console.log(annotation);
+                          },
+                        //submit: this.setAnnotationTags
+                  });
+
+                  //Translation:
+                    this.annotator.viewer.addField({
+                        load: function (field, annotation) {
+                          field.innerHTML = $('#translations').attr("placeholder")+": "+$('#translations').val()
+                        }
+                    });
+
+                  this.annotator.editor.addField({
+                      id: "translations",
+                      name: "translation",
+                        label: 'Translation',
+                        type: 'input',
+                        //load: this.updateField,
+                        load: function (field, annotation) {
+                            var selectedText = window.getSelection().toString();
+                            //field.val(selectedText);
+                            //$(field).find("input").attr('value', $(field).find("input").attr("placeholder")+": "+ selectedText);
+                            
+                        $.getJSON( "https://www.googleapis.com/language/translate/v2?key=AIzaSyBHdZSyiLwSi3dcpoGUc2y4Yu-kQxwvaXk&q="+selectedText+"&target=ar")
+                          .done(function( data ) {
+                                    console.log(data.data.translations[0].translatedText);
+                                    var translationFromGoogle = data.data.translations[0].translatedText;
+                                    $(field).find("input").attr('value',  data.data.translations[0].translatedText);
+                                  });
+                                },
+                        //submit: this.setAnnotationTags
+                  });
+
+                  };
+
+                  return plugin;
+                }
+
+                $('body').annotator().annotator('addPlugin', 'Message'); 
+
+  
+                  //Annotation scroll
+                  $('#anotacions-uoc-panel').slimscroll({height: '100%'});
+               });
+               </script>
+<!--  -->
+
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
 
